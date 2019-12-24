@@ -5,6 +5,7 @@ class HnlcrimestopSpider(scrapy.Spider):
     name = 'hnlcrimestop'
     allowed_domains = ['honolulucrimestoppers.org']
     start_urls = ['http://honolulucrimestoppers.org/sitemenu.aspx?P=missing&ID=606']
+    #used User-Agent specified in settings.py
     
     def parse(self, response):
         source_head = response.xpath('//html/head/title/text()').get()

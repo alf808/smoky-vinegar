@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- InstanceBegin template="/Templates/mainTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel='stylesheet' type='text/css' href='../css/style.css' />
+    <link id="size-stylesheet" rel='stylesheet' type='text/css' href='../css/layout.css' />
+
+    <script type='text/javascript' src='../javascript/jquery.js'></script>
+    <script type='text/javascript' src='../javascript/resolution-test-template.js'></script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-2524453-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>HPD News</title>
+    <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+    <!--[if gt IE 6]>
+<div id="background">     <img src="../images/background.jpg" class="stretch" alt="" /> </div> 
+<![endif]-->
+
+    <!--[if !IE]><!-->
+    <div id="background"> <img src="../images/background.jpg" class="stretch" alt="" /> </div>
+    <!--<![endif]-->
+
+    <div id="wrap">
+        <div id="header">
+
+            <div style="overflow:hidden; border-top-left-radius: 50px; border-top-right-radius: 50px;"><img
+                    src="../timages/TitleBar1.jpg" width="1024" height="218" alt="Honolulu Police Department" /></div>
+
+        </div>
+
+        <div id="mainmenu">
+
+            <ul class="menu">
+                <li><a href="../index.php"><span>HOME</span></a></li>
+                <li><a href="../department/index.php"><span>DEPARTMENT</span></a></li>
+                <li><a href="../information/index.php"><span>INFORMATION</span></a></li>
+                <li><a href="../community/index.php"><span>COMMUNITY</span></a></li>
+                <li><a href="../contact/index.php"><span>CONTACT US</span></a></li>
+                <li><a href="../sitemap/index.php"><span>SITE MAP</span></a></li>
+            </ul>
+
+            <div id="socialMediaDivAll">
+                <a href="../socialmedia/index.php"><img src="../images/SocialMedia2.jpg" width="120" height="26"
+                        border="0" alt="Social Media Links"></a>
+            </div>
+        </div>
+
+        <!-- InstanceBeginEditable name="mainContent" -->
+
+        <div id="calendar">
+
+
+            <SCRIPT>
+
+                var imageId = new Array();
+                var count = 1;
+
+
+                img1 = new Image();
+                img1.src = "../images/news/09-30-2019_11-47-076867.jpg";
+                title1 = "";
+
+                imageId[count] = 5309;
+
+
+                count = count + 1;
+
+                var g_LastImageSelected = 1;
+                var m_numImages = 1;
+
+                function chooseStory(num) {
+                    // Maually selected so stop the timer //
+                    clearInterval(m_Timer);
+
+                    // Select the story //
+                    slideshowSelect(num);
+                }
+
+                function slideshowSelect(num) {
+                    if (num != g_LastImageSelected) {
+                        $("#new_image").fadeOut(200, function () { $("#new_image").attr("src", eval("img" + num + ".src")); }).fadeIn(200);
+                    }
+
+                    document.getElementById('titleText').innerHTML = eval("title" + num);
+
+                    if (g_LastImageSelected != num) {
+                        // Select the new image //
+                        var element = document.getElementById('imgID' + num);
+                        element.className = "imgLinkActive";
+
+                        // Fade the last image //
+                        var element2 = document.getElementById('imgID' + g_LastImageSelected);
+                        element2.className = "imgLinkInActive";
+                        g_LastImageSelected = num;
+
+                    }
+                    else {
+                        // Select the new image //
+                        var element = document.getElementById('imgID' + num);
+                        element.className = "imgLinkActive";
+                    }
+
+                }
+
+                $(document).ready(function () {
+                    if (m_numImages > 1) {
+                        slideshowSelect(1);
+                    }
+                });
+
+                if (m_numImages > 1) {
+                    var m_Timer = setInterval(function () { f_ChangeStory() }, 7000);
+                }
+
+                var m_currentImage = 1;
+
+
+                function f_ChangeStory() {
+                    m_currentImage = m_currentImage + 1;
+                    if (m_currentImage == m_numImages) { m_currentImage = 1; }
+                    slideshowSelect(m_currentImage);
+                }
+
+            </SCRIPT>
+            <table class="tableBack">
+                <tr>
+                    <th scope="col">
+                        <p style="text-align:center"> <a class="subtitletx"
+                                href="../information/index.php?page=news_archive">Back</a></p>
+                    </th>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <p style="text-align:center" class="titletx">HPD Latest News</p>
+            <br>
+            <br>
+
+            <p class="subtitletx" style="text-align:center" id='titleText'></p>
+            <p class="subtitletx" style="text-align:center"><IMG alt="Generic Story Image"
+                    SRC="../images/news/09-30-2019_11-47-076867.jpg" id="new_image"></p>
+            <p class="bodytx" style="text-align:center">
+                <br>
+                <br>
+                <br>
+                <div id="fb-root"></div>
+                <script>(function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                <div class="center">
+                    <div class="fb-like" data-href="http://www.honolulupd.org/news/index.php?page=main&story=2815"
+                        data-send="true" data-width="450" data-show-faces="false" data-action="recommend"
+                        data-font="verdana"></div>
+                    <br>
+                    <a href="https://twitter.com/honolulupolice" class="twitter-follow-button"
+                        data-show-count="false">Follow @honolulupolice</a>
+                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+                    <link rel="canonical" href="http://www.honolulupd.org/news/index.php?page=main&story=2815" />
+                    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">     </script>
+                    <g:plusone></g:plusone>
+
+                </div>
+                <br>
+                <p class="subtitletx" style="text-align:center">Missing Person: Steven Meyers</p>
+                <br>
+                <div style="width:605px; margin-left:auto; margin-right:auto;">
+                    <p class="bodytx" style="text-align:left">CrimeStoppers and the Honolulu Police Department is
+                        seeking the public’s assistance in locating Steven Meyers. Steven last spoke with his family on
+                        Saturday, September 7, 2019, at approximately 6:00 p.m. He was possibly driving his gold 1999
+                        Nissan Altima four-door sedan bearing Hawaii license plates NCS 444. The vehicle has since been
+                        located and recovered. Steven works and frequents the Kapolei and Campbell Industrial areas.
+                        Family and friends are concerned for his safety and well-being.<br />
+                        <br />
+                        Anyone with information about this incident is asked to call CrimeStoppers at 955-8300. The
+                        public may now send anonymous web tips to www.honolulucrimestoppers.org or via the P3 Tips app.
+                    </p>
+                </div>
+                <br>
+                <br>
+
+
+
+        </div>
+
+        <!-- InstanceEndEditable -->
+
+        <!-- InstanceBeginEditable name="sideMenu" -->
+
+        <!-- InstanceEndEditable -->
+
+        <div id="footer">
+
+            <div id="left"><a href="../department/index.php?tab=tabs-5"><img src="../images/PoliceCommission.jpg"
+                        width="100" height="130" alt="HPC Seal" /></a></div>
+
+            <div id="center"
+                style="background-size:120px 118px; background:url(../images/HPDSeal_t.jpg)center no-repeat; ">
+                <p class="footertx">801 South Beretania Street, Honolulu, Hawaii, 96813 <br> Emergency 911 or Contact
+                    (808)529-3111 <br> <br> <a href="http://www.honolulu.gov/" target="_blank">City and County of
+                        Honolulu</a> <br> An Equal Opportunity Employer<br><br><a
+                        href="index.php?page=disclaimer">Disclaimer</a></p>
+            </div>
+
+            <div id="right"><a href="../department/index.php?tab=tabs-4"><img src="../images/calea.jpg" width="100"
+                        height="130" alt="CALEA" /></a></div>
+
+            <div style="clear:both"></div>
+
+
+        </div>
+    </div>
+
+</body>
+<!-- InstanceEnd -->
+
+</html>

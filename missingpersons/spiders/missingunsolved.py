@@ -7,6 +7,7 @@ class MissingunsolvedSpider(scrapy.Spider):
     name = 'missingunsolved'
     allowed_domains = ['www.missingandunsolved.com']
     start_urls = ['http://www.missingandunsolved.com/hawaii/']
+    #used User-Agent specified in settings.py
 
     def parse(self, response):
         source_name = response.xpath('//html/head/title/text()').get()
